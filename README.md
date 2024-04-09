@@ -7,7 +7,7 @@ Law, LLM
 Human Resources Professional
 - built alliances
 - managed contracts, budget, people
-- enhanced skills, work environments
+- enhanced skills, workflows, work environments
 - rolled out Human Capital Management technologies
 
 ### Projects
