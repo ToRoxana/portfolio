@@ -1,6 +1,6 @@
 title: First Project
-teaser: # path of fallback teaser image, e.g. "/assets/headshot_circle.jpeg"
-logo: /assets/headshot_circle.jpeg
+teaser: # path of fallback teaser image, e.g. "/assets/headshot_circle.png"
+logo: /assets/headshot_circle.png
 description: Forward-thinking strategist dedicated to leveraging synergies for sustainable growth
 # show_downloads: true
 theme: jekyll-theme-minimal
