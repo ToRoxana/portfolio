@@ -22,6 +22,6 @@ Jupyter Notes
 - CISSP
 
 ### Certifications
-- CompTIA Security+ SYO 701 <03.2027
+- CompTIA Security+ SY0 701 <03.2027
 - Cambridge Advanced English - C1
 - Advanced Excel
