@@ -1,4 +1,5 @@
 title: First Project
+teaser: # path of fallback teaser image, e.g. "/assets/headshot_circle.jpg"
 logo: /assets/headshot_circle.jpg
 description: Forward-thinking strategist dedicated to leveraging synergies for sustainable growth
 # show_downloads: true
