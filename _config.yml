@@ -4,4 +4,4 @@ logo: assets/headshot_circle.png
 description: Leveraging synergies for sustainable growth
 # show_downloads: true
 # theme: jekyll-theme-minimal
-remote_theme: minimal_mistakes
+remote_theme: minimal-mistakes-jekyll
