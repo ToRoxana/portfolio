@@ -3,5 +3,5 @@ teaser: ![](/assets/headshot_circle.png)
 logo: assets/headshot_circle.png
 description: Leveraging synergies for sustainable growth
 # show_downloads: true
-theme: jekyll-theme-minimal
+theme: # jekyll-theme-minimal
 lang: [en | fr]
