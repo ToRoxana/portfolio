@@ -6,12 +6,15 @@ Law, LLM
 ### Work Experience
 Human Resources Professional
 - build alliances
-- manage contracts, budget, people
+- manage contracts, budgets, people
 - enhance skills, workflows, work environments
 - roll out Human Capital Management technologies
 
-### Projects
-Jupyter Notes
+### Technologies Tested
+- Ubuntu on Hyper-V
+- Windows 11 Pro OS and macOS Sonoma
+- Gpg4win - Kleopatra
+- Wireshark
 
 ### Roadmap
 - CCNA
