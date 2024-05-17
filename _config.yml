@@ -3,4 +3,11 @@ teaser: ![](/assets/headshot_circle.png)
 logo: assets/headshot_circle.png
 description: Leveraging synergies for sustainable growth
 # show_downloads: true
-theme: jekyll-theme-minimal
+theme: jekyll-theme-chirpy
+lang: [en | fr]
+url: ""
+
+github: 
+username: ToRoxana
+linkedin: 
+username: 
