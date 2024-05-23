@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- Boilerplate: Starting HTML document -->
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- Boilerplate: Character set -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A modern and responsive personal webpage.">
-    <title>Personal Webpage</title>
+    <title>Personal Webpage</title> <!-- Boilerplate: Title -->
     <style>
+          /* Basic CSS styles go here */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -93,9 +94,11 @@
                 box-sizing: border-box;
             }
         }
+        /* More custom styles */
     </style>
 </head>
 <body>
+     <!-- Page content goes here -->
     <header>
         <h1>Welcome to My Personal Webpage</h1>
     </header>
@@ -136,7 +139,39 @@
     </footer>
     <!-- Optional JavaScript for functionality -->
     <script>
+        // Font Awesome SVG Icons
+        document.querySelectorAll('.fa').forEach(el => {
+          el.style.display = 'inline-block';
+          el.style.fontFamily = 'FontAwesome';
+        });
+        
         // Language switcher functionality (simplified example)
+        const translations = {
+    en: {
+        welcome: "Welcome to My Personal Webpage",
+        postTitle: "Post Title",
+        postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        comments: "Comments",
+        leaveComment: "Leave a comment...",
+        submit: "Submit"
+    },
+    fr: {
+        welcome: "Bienvenue sur ma page personnelle",
+        postTitle: "Titre de l'article",
+        postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        comments: "Commentaires",
+        leaveComment: "Laisser un commentaire...",
+        submit: "Soumettre"
+    },
+    it: {
+        welcome: "Benvenuto nella mia pagina personale",
+        postTitle: "Titolo dell'articolo",
+        postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        comments: "Commenti",
+        leaveComment: "Lascia un commento...",
+        submit: "Invia"
+        }
+        };
         const languageSwitcher = document.getElementById('language-switcher');
         languageSwitcher.addEventListener('change', (event) => {
             const lang = event.target.value;
