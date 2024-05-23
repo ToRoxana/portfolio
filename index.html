@@ -1,195 +1,218 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- Boilerplate: Starting HTML document -->
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8"> <!-- Boilerplate: Character set -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A modern and responsive personal webpage.">
-    <title>Personal Webpage</title> <!-- Boilerplate: Title -->
+    <title>Personal Webpage</title>
     <style>
-          /* Basic CSS styles go here */
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset CSS */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f5f9;
             color: #333;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: space-around;
-            background-color: #444;
-            padding: 10px 0;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 8px 16px;
-        }
-        nav a:hover {
-            background-color: #555;
-        }
+
         .container {
             max-width: 1200px;
-            margin: 20px auto;
+            margin: 0 auto;
             padding: 0 20px;
         }
+
+        nav {
+            background-color: #3498db;
+            padding: 10px 0;
+            color: #fff;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+            margin-right: auto;
+        }
+
+        .language-switcher {
+            margin-right: 20px;
+        }
+
+        nav input[type="text"] {
+            padding: 5px;
+        }
+
+        header {
+            background-color: #5bc0de;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        main {
+            padding: 20px 0;
+        }
+
         .post {
-            background-color: #fff;
             margin-bottom: 20px;
-            padding: 20px;
+            background-color: #fff;
             border-radius: 8px;
+            overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .post img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
-            border-radius: 8px;
             display: block;
-            margin: 0 auto 20px;
         }
-        .post h2 {
-            margin-top: 0;
+
+        .post-content {
+            padding: 20px;
         }
-        .post .meta {
-            font-size: 0.9em;
-            color: #666;
+
+        .post-content h2 {
+            margin-bottom: 10px;
         }
-        .post .meta a {
-            color: #666;
+
+        .post-content p {
+            margin-bottom: 10px;
+        }
+
+        .category {
+            font-style: italic;
+        }
+
+        .link {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: #fff;
             text-decoration: none;
+            border-radius: 5px;
         }
-        .post .meta a:hover {
-            text-decoration: underline;
+
+        .link:hover {
+            background-color: #2980b9;
         }
+
         footer {
-            background-color: #333;
+            background-color: #3498db;
             color: #fff;
             text-align: center;
             padding: 20px 0;
         }
-        footer .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            vertical-align: middle;
         }
-        footer .social-icons a {
-            color: #fff;
-            font-size: 1.5em;
-            text-decoration: none;
-        }
-        @media (min-width: 768px) {
-            .container {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-            }
-            .post {
-                flex: 1 1 calc(33.333% - 20px);
-                box-sizing: border-box;
-            }
-        }
-        /* More custom styles */
     </style>
 </head>
+
 <body>
-     <!-- Page content goes here -->
-    <header>
-        <h1>Welcome to My Personal Webpage</h1>
-    </header>
+    <!-- Navigation Bar -->
     <nav>
-        <a href="#about">About</a>
-        <a href="#blog">Blog</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="#search">Search</a>
-        <select id="language-switcher">
-            <option value="en">English</option>
-            <option value="fr">Français</option>
-            <option value="it">Italiano</option>
-        </select>
-    </nav>
-    <div class="container">
-        <div class="post">
-            <!-- Optional Image -->
-            <!-- <img src="path/to/your/image.jpg" alt="Description of the image"> -->
-            <h2>Post Title</h2>
-            <div class="meta">
-                <span>By <a href="#">Author</a></span> | 
-                <span>Date: 2023-05-17</span> | 
-                <span><a href="#">Comments</a></span>
+        <div class="container">
+            <h1>Personal Webpage</h1>
+            <div class="language-switcher">
+                <label for="lang-select">Language:</label>
+                <select id="lang-select">
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="it">Italian</option>
+                </select>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <input type="text" placeholder="Search...">
         </div>
-        <!-- Repeat .post div for more posts -->
-    </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <header>
+        <div class="hero">
+            <h2>Welcome to My Personal Webpage</h2>
+            <p>This is a space for sharing thoughts, experiences, and ideas.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Post 1 -->
+            <div class="post">
+                <img src="https://source.unsplash.com/random" alt="Post Image">
+                <div class="post-content">
+                    <h2>Post Title 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Posted by John Doe on 2024-05-23 in <span class="category">General</span></p>
+                    <a href="#" class="link">Read More</a>
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="post">
+                <img src="https://source.unsplash.com/random" alt="Post Image">
+                <div class="post-content">
+                    <h2>Post Title 2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Posted by Jane Smith on 2024-05-22 in <span class="category">Technology</span></p>
+                    <a href="#" class="link">Read More</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 My Personal Webpage</p>
-        <div class="social-icons">
-            <a href="#" aria-label="Facebook">FB</a>
-            <a href="#" aria-label="Twitter">TW</a>
-            <a href="#" aria-label="LinkedIn">LI</a>
-            <a href="#" aria-label="Instagram">IG</a>
+        <div class="container">
+            <div class="social-icons">
+                <a href="#" aria-label="LinkedIn"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#" aria-label="GitHub"><img src="github-icon.png" alt="GitHub"></a>
+            </div>
         </div>
     </footer>
-    <!-- Optional JavaScript for functionality -->
+
+    <!-- JavaScript -->
     <script>
-        // Font Awesome SVG Icons
-        document.querySelectorAll('.fa').forEach(el => {
-          el.style.display = 'inline-block';
-          el.style.fontFamily = 'FontAwesome';
-        });
-        
-        // Language switcher functionality (simplified example)
-        const translations = {
-    en: {
-        welcome: "Welcome to My Personal Webpage",
-        postTitle: "Post Title",
-        postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        comments: "Comments",
-        leaveComment: "Leave a comment...",
-        submit: "Submit"
-    },
-    fr: {
-        welcome: "Bienvenue sur ma page personnelle",
-        postTitle: "Titre de l'article",
-        postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        comments: "Commentaires",
-        leaveComment: "Laisser un commentaire...",
-        submit: "Soumettre"
-    },
-    it: {
-        welcome: "Benvenuto nella mia pagina personale",
-        postTitle: "Titolo dell'articolo",
-        postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        comments: "Commenti",
-        leaveComment: "Lascia un commento...",
-        submit: "Invia"
-        }
-        };
-        const languageSwitcher = document.getElementById('language-switcher');
-        languageSwitcher.addEventListener('change', (event) => {
-            const lang = event.target.value;
-            document.documentElement.setAttribute('lang', lang);
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const langSelect = document.getElementById('lang-select');
+            const posts = document.querySelectorAll('.post');
 
-        // Accessibility: Read text aloud (simplified example)
-        function readAloud(text) {
-            const utterance = new SpeechSynthesisUtterance(text);
-            window.speechSynthesis.speak(utterance);
-        }
+            // Function to switch language
+            langSelect.addEventListener('change', function() {
+                const selectedLang = langSelect.value;
 
-        document.querySelectorAll('.post').forEach(post => {
-            const readButton = document.createElement('button');
-            readButton.textContent = 'Read Aloud';
-            readButton.addEventListener('click', () => readAloud(post.textContent));
-            post.appendChild(readButton);
+                // Example: Change text inside posts
+                posts.forEach(post => {
+                    const title = post.querySelector('h2');
+                    const category = post.querySelector('.category');
+
+                    switch (selectedLang) {
+                        case 'fr':
+                            title.textContent = 'Titre de l\'article';
+                            category.textContent = 'Général';
+                            break;
+                        case 'it':
+                            title.textContent = 'Titolo dell\'articolo';
+                            category.textContent = 'Generale';
+                            break;
+                        default:
+                            title.textContent = 'Post Title';
+                            category.textContent = 'General';
+                    }
+                });
+            });
         });
     </script>
 </body>
+
 </html>
