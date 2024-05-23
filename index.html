@@ -66,33 +66,6 @@
         .post .meta a:hover {
             text-decoration: underline;
         }
-        .comment-section {
-            margin-top: 20px;
-        }
-        .comment-section h3 {
-            margin-bottom: 10px;
-        }
-        .comment-section form {
-            display: flex;
-            flex-direction: column;
-        }
-        .comment-section textarea {
-            resize: vertical;
-            min-height: 100px;
-            margin-bottom: 10px;
-        }
-        .comment-section button {
-            align-self: flex-end;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .comment-section button:hover {
-            background-color: #555;
-        }
         footer {
             background-color: #333;
             color: #fff;
@@ -109,18 +82,6 @@
             font-size: 1.5em;
             text-decoration: none;
         }
-        .fa-facebook-f:before {
-            content: '\f39e';
-        }
-        .fa-twitter:before {
-            content: '\f099';
-        }
-        .fa-linkedin-in:before {
-            content: '\f0e1';
-        }
-        .fa-instagram:before {
-            content: '\f16d';
-        }
         @media (min-width: 768px) {
             .container {
                 display: flex;
@@ -136,7 +97,7 @@
 </head>
 <body>
     <header>
-        <h1 id="welcome">Welcome to My Personal Webpage</h1>
+        <h1>Welcome to My Personal Webpage</h1>
     </header>
     <nav>
         <a href="#about">About</a>
@@ -149,109 +110,51 @@
             <option value="fr">Français</option>
             <option value="it">Italiano</option>
         </select>
-        <button id="mute-btn">Mute</button>
     </nav>
     <div class="container">
         <div class="post">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiNlMmU0ZWIiIC8+CiAgPHRleHQgeD0iNDAwIiB5PSIyMDAiIGR5PSIuMzVlbSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNnB4IiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBsYWNlaG9sZGVyIElNQUdFPC90ZXh0Pgo8L3N2Zz4=" alt="Post Image">
+            <!-- Optional Image -->
+            <!-- <img src="path/to/your/image.jpg" alt="Description of the image"> -->
             <h2>Post Title</h2>
             <div class="meta">
                 <span>By <a href="#">Author</a></span> | 
                 <span>Date: 2023-05-17</span> | 
                 <span><a href="#">Comments</a></span>
             </div>
-            <p id="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <button class="read-aloud-btn">Read Aloud</button>
-            <div class="comment-section">
-                <h3>Comments</h3>
-                <form>
-                    <textarea placeholder="Leave a comment..."></textarea>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
         <!-- Repeat .post div for more posts -->
     </div>
     <footer>
         <p>&copy; 2024 My Personal Webpage</p>
         <div class="social-icons">
-            <a href="#" aria-label="Facebook"><i class="fa fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook">FB</a>
+            <a href="#" aria-label="Twitter">TW</a>
+            <a href="#" aria-label="LinkedIn">LI</a>
+            <a href="#" aria-label="Instagram">IG</a>
         </div>
     </footer>
+    <!-- Optional JavaScript for functionality -->
     <script>
-  // Font Awesome SVG Icons
-document.querySelectorAll('.fa').forEach(el => {
-    el.style.display = 'inline-block';
-    el.style.fontFamily = 'FontAwesome';
-});
+        // Language switcher functionality (simplified example)
+        const languageSwitcher = document.getElementById('language-switcher');
+        languageSwitcher.addEventListener('change', (event) => {
+            const lang = event.target.value;
+            document.documentElement.setAttribute('lang', lang);
+        });
 
-// Language switcher functionality
-const translations = {
-    en: {
-        welcome: "Welcome to My Personal Webpage",
-        postTitle: "Post Title",
-        postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        comments: "Comments",
-        leaveComment: "Leave a comment...",
-        submit: "Submit"
-    },
-    fr: {
-        welcome: "Bienvenue sur ma page personnelle",
-        postTitle: "Titre de l'article",
-        postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        comments: "Commentaires",
-        leaveComment: "Laisser un commentaire...",
-        submit: "Soumettre"
-    },
-    it: {
-        welcome: "Benvenuto nella mia pagina personale",
-        postTitle: "Titolo dell'articolo",
-        postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        comments: "Commenti",
-        leaveComment: "Lascia un commento...",
-        submit: "Invia"
-    }
-};
+        // Accessibility: Read text aloud (simplified example)
+        function readAloud(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(utterance);
+        }
 
-const languageSwitcher = document.getElementById('language-switcher');
-const muteButton = document.getElementById('mute-btn');
-const welcomeText = document.getElementById('welcome');
-const postTitle = document.querySelector('.post h2');
-const postContent = document.getElementById('post-content');
-const commentsHeading = document.querySelector('.comment-section h3');
-const leaveCommentPlaceholder = document.querySelector('.comment-section textarea').placeholder;
-const submitButton = document.querySelector('.comment-section button');
-
-languageSwitcher.addEventListener('change', function() {
-    const selectedLanguage = this.value;
-    welcomeText.textContent = translations[selectedLanguage].welcome;
-    postTitle.textContent = translations[selectedLanguage].postTitle;
-    postContent.textContent = translations[selectedLanguage].postContent;
-    commentsHeading.textContent = translations[selectedLanguage].comments;
-    leaveCommentPlaceholder.textContent = translations[selectedLanguage].leaveComment;
-    submitButton.textContent = translations[selectedLanguage].submit;
-});
-
-muteButton.addEventListener('click', function() {
-    const synth = window.speechSynthesis;
-    if (synth.speaking) {
-        synth.cancel();
-        muteButton.textContent = "Unmute";
-    } else {
-        muteButton.textContent = "Mute";
-    }
-});
-
-// Submit Comment
-submitButton.addEventListener('click', function(event) {
-    event.preventDefault();
-    const commentTextarea = document.querySelector('.comment-section textarea');
-    const comment = commentTextarea.value;
-    // Here you can handle the comment, for now let's log it to the console
-    console.log("Submitted comment:", comment);
-    // Clear textarea after submitting
-    commentTextarea.value = "";
-});
+        document.querySelectorAll('.post').forEach(post => {
+            const readButton = document.createElement('button');
+            readButton.textContent = 'Read Aloud';
+            readButton.addEventListener('click', () => readAloud(post.textContent));
+            post.appendChild(readButton);
+        });
+    </script>
+</body>
+</html>
