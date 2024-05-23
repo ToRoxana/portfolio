@@ -29,11 +29,13 @@
             background-color: #3498db;
             padding: 10px 0;
             color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         nav h1 {
             font-size: 1.5rem;
-            margin-right: auto;
         }
 
         .language-switcher {
@@ -58,10 +60,13 @@
 
         main {
             padding: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .post {
-            margin-bottom: 20px;
+            flex: 1 1 calc(50% - 20px);
             background-color: #fff;
             border-radius: 8px;
             overflow: hidden;
@@ -116,14 +121,26 @@
             margin: 0 10px;
             vertical-align: middle;
         }
+
+        .read-aloud {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
     <!-- Navigation Bar -->
     <nav>
-        <div class="container">
-            <h1>Personal Webpage</h1>
+        <h1>Personal Webpage</h1>
+        <div>
+            <input type="text" id="search-bar" placeholder="Search...">
             <div class="language-switcher">
                 <label for="lang-select">Language:</label>
                 <select id="lang-select">
@@ -132,7 +149,6 @@
                     <option value="it">Italian</option>
                 </select>
             </div>
-            <input type="text" placeholder="Search...">
         </div>
     </nav>
 
@@ -148,7 +164,7 @@
     <main>
         <div class="container">
             <!-- Post 1 -->
-            <div class="post">
+            <div class="post" data-title="Post Title 1">
                 <img src="https://source.unsplash.com/random" alt="Post Image">
                 <div class="post-content">
                     <h2>Post Title 1</h2>
@@ -159,7 +175,7 @@
             </div>
 
             <!-- Post 2 -->
-            <div class="post">
+            <div class="post" data-title="Post Title 2">
                 <img src="https://source.unsplash.com/random" alt="Post Image">
                 <div class="post-content">
                     <h2>Post Title 2</h2>
@@ -186,12 +202,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             const langSelect = document.getElementById('lang-select');
             const posts = document.querySelectorAll('.post');
+            const searchBar = document.getElementById('search-bar');
 
             // Function to switch language
             langSelect.addEventListener('change', function() {
                 const selectedLang = langSelect.value;
 
-                // Example: Change text inside posts
                 posts.forEach(post => {
                     const title = post.querySelector('h2');
                     const category = post.querySelector('.category');
@@ -208,6 +224,19 @@
                         default:
                             title.textContent = 'Post Title';
                             category.textContent = 'General';
+                    }
+                });
+            });
+
+            // Search functionality
+            searchBar.addEventListener('input', function() {
+                const searchQuery = searchBar.value.toLowerCase();
+                posts.forEach(post => {
+                    const title = post.getAttribute('data-title').toLowerCase();
+                    if (title.includes(searchQuery)) {
+                        post.style.display = 'block';
+                    } else {
+                        post.style.display = 'none';
                     }
                 });
             });
