@@ -182,45 +182,76 @@
         </div>
     </footer>
     <script>
-        // Font Awesome SVG Icons
-        document.querySelectorAll('.fa').forEach(el => {
-            el.style.display = 'inline-block';
-            el.style.fontFamily = 'FontAwesome';
-        });
+  // Font Awesome SVG Icons
+document.querySelectorAll('.fa').forEach(el => {
+    el.style.display = 'inline-block';
+    el.style.fontFamily = 'FontAwesome';
+});
 
-        // Language switcher functionality
-        const translations = {
-            en: {
-                welcome: "Welcome to My Personal Webpage",
-                postTitle: "Post Title",
-                postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                comments: "Comments",
-                leaveComment: "Leave a comment...",
-                submit: "Submit"
-            },
-            fr: {
-                welcome: "Bienvenue sur ma page personnelle",
-                postTitle: "Titre de l'article",
-                postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                comments: "Commentaires",
-                leaveComment: "Laisser un commentaire...",
-                submit: "Soumettre"
-            },
-            it: {
-                welcome: "Benvenuto nella mia pagina personale",
-                postTitle: "Titolo dell'articolo",
-                postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                comments: "Commenti",
-                leaveComment: "Lascia un commento...",
-                submit: "Invia"
-            }
-        };
+// Language switcher functionality
+const translations = {
+    en: {
+        welcome: "Welcome to My Personal Webpage",
+        postTitle: "Post Title",
+        postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        comments: "Comments",
+        leaveComment: "Leave a comment...",
+        submit: "Submit"
+    },
+    fr: {
+        welcome: "Bienvenue sur ma page personnelle",
+        postTitle: "Titre de l'article",
+        postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        comments: "Commentaires",
+        leaveComment: "Laisser un commentaire...",
+        submit: "Soumettre"
+    },
+    it: {
+        welcome: "Benvenuto nella mia pagina personale",
+        postTitle: "Titolo dell'articolo",
+        postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        comments: "Commenti",
+        leaveComment: "Lascia un commento...",
+        submit: "Invia"
+    }
+};
 
-        const languageSwitcher = document.getElementById('language-switcher');
-        const muteButton = document.getElementById('mute-btn');
-        const welcomeText = document.getElementById('welcome');
-        const postTitle = document.querySelector('.post h2');
-        const postContent = document.getElementById('post-content');
-        const commentsHeading = document.querySelector('.comment-section h3');
-        const leaveCommentPlaceholder = document.querySelector('.comment-section textarea').placeholder;
-        const submit
+const languageSwitcher = document.getElementById('language-switcher');
+const muteButton = document.getElementById('mute-btn');
+const welcomeText = document.getElementById('welcome');
+const postTitle = document.querySelector('.post h2');
+const postContent = document.getElementById('post-content');
+const commentsHeading = document.querySelector('.comment-section h3');
+const leaveCommentPlaceholder = document.querySelector('.comment-section textarea').placeholder;
+const submitButton = document.querySelector('.comment-section button');
+
+languageSwitcher.addEventListener('change', function() {
+    const selectedLanguage = this.value;
+    welcomeText.textContent = translations[selectedLanguage].welcome;
+    postTitle.textContent = translations[selectedLanguage].postTitle;
+    postContent.textContent = translations[selectedLanguage].postContent;
+    commentsHeading.textContent = translations[selectedLanguage].comments;
+    leaveCommentPlaceholder.textContent = translations[selectedLanguage].leaveComment;
+    submitButton.textContent = translations[selectedLanguage].submit;
+});
+
+muteButton.addEventListener('click', function() {
+    const synth = window.speechSynthesis;
+    if (synth.speaking) {
+        synth.cancel();
+        muteButton.textContent = "Unmute";
+    } else {
+        muteButton.textContent = "Mute";
+    }
+});
+
+// Submit Comment
+submitButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    const commentTextarea = document.querySelector('.comment-section textarea');
+    const comment = commentTextarea.value;
+    // Here you can handle the comment, for now let's log it to the console
+    console.log("Submitted comment:", comment);
+    // Clear textarea after submitting
+    commentTextarea.value = "";
+});
