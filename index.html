@@ -3,158 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A modern and responsive personal webpage.">
-    <title>Personal Webpage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: space-around;
-            background-color: #444;
-            padding: 10px 0;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 8px 16px;
-        }
-        nav a:hover {
-            background-color: #555;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        .post {
-            background-color: #fff;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .post img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-            margin: 0 auto 20px;
-        }
-        .post h2 {
-            margin-top: 0;
-        }
-        .post .meta {
-            font-size: 0.9em;
-            color: #666;
-        }
-        .post .meta a {
-            color: #666;
-            text-decoration: none;
-        }
-        .post .meta a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-        footer .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        footer .social-icons a {
-            color: #fff;
-            font-size: 1.5em;
-            text-decoration: none;
-        }
-        @media (min-width: 768px) {
-            .container {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-            }
-            .post {
-                flex: 1 1 calc(33.333% - 20px);
-                box-sizing: border-box;
-            }
-        }
-    </style>
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Personal Webpage</h1>
+        <h1>Contact Me</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#blog">Blog</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="#search">Search</a>
-        <select id="language-switcher">
-            <option value="en">English</option>
-            <option value="fr">Français</option>
-            <option value="it">Italiano</option>
-        </select>
-    </nav>
-    <div class="container">
-        <div class="post">
-            <!-- Optional Image -->
-            <!-- <img src="path/to/your/image.jpg" alt="Description of the image"> -->
-            <h2>Post Title</h2>
-            <div class="meta">
-                <span>By <a href="#">Author</a></span> | 
-                <span>Date: 2023-05-17</span> | 
-                <span><a href="#">Comments</a></span>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <!-- Repeat .post div for more posts -->
-    </div>
+    <main>
+        <section>
+            <h2>Get in Touch</h2>
+            <p>If you'd like to discuss a project or just want to say hello, feel free to contact me.</p>
+            <p>Email: john.doe@example.com</p>
+            <p>Phone: +1-800-555-5555</p>
+            <p>Address: 123 Your Street, Your City, Your Country</p>
+        </section>
+    </main>
     <footer>
-        <p>&copy; 2024 My Personal Webpage</p>
-        <div class="social-icons">
-            <a href="#" aria-label="Facebook">FB</a>
-            <a href="#" aria-label="Twitter">TW</a>
-            <a href="#" aria-label="LinkedIn">LI</a>
-            <a href="#" aria-label="Instagram">IG</a>
-        </div>
+        <p>&copy; 2024 John Doe</p>
     </footer>
-    <!-- Optional JavaScript for functionality -->
-    <script>
-        // Language switcher functionality (simplified example)
-        const languageSwitcher = document.getElementById('language-switcher');
-        languageSwitcher.addEventListener('change', (event) => {
-            const lang = event.target.value;
-            document.documentElement.setAttribute('lang', lang);
-        });
-
-        // Accessibility: Read text aloud (simplified example)
-        function readAloud(text) {
-            const utterance = new SpeechSynthesisUtterance(text);
-            window.speechSynthesis.speak(utterance);
-        }
-
-        document.querySelectorAll('.post').forEach(post => {
-            const readButton = document.createElement('button');
-            readButton.textContent = 'Read Aloud';
-            readButton.addEventListener('click', () => readAloud(post.textContent));
-            post.appendChild(readButton);
-        });
-    </script>
 </body>
 </html>
