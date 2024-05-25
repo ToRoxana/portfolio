@@ -2,37 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title id="pageTitle">Copywriter Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
-    <select id="languageSelector">
-        <option value="en">English</option>
-        <option value="it">Italiano</option> <!-- Changed from Spanish to Italian -->
-        <option value="fr">Français</option>
-    </select>
 </head>
 <body>
     <header>
-        <h1>About Me</h1>
+        <h1 id="headerTitle">John Doe - Copywriter Portfolio</h1>
         <nav>
-           <ul>
+            <ul>
                 <li><a href="index.html" id="navHome">Home</a></li>
                 <li><a href="about.html" id="navAbout">About</a></li>
                 <li><a href="portfolio.html" id="navPortfolio">Portfolio</a></li>
                 <li><a href="contact.html" id="navContact">Contact</a></li>
             </ul>
         </nav>
+        <div>
+            <select id="languageSelector">
+                <option value="en">English</option>
+                <option value="it">Italiano</option>
+                <option value="fr">Français</option>
+            </select>
+            <input type="text" id="searchBar" placeholder="Search...">
+            <button id="readAloud">Read Aloud</button>
+        </div>
     </header>
     <main>
         <section>
-            <h2>My Story</h2>
-            <p>I'm John Doe, a professional copywriter with a passion for crafting compelling content. With experience in SEO, ghostwriting, and blog writing, I help brands tell their stories.</p>
-            <p>Check out my <a href="https://en.wikipedia.org/wiki/Copywriting">copywriting</a> work and <a href="https://en.wikipedia.org/wiki/Search_engine_optimization">SEO</a> strategies.</p>
+            <h2 id="welcomeTitle">Welcome to My Portfolio</h2>
+            <p id="welcomeText">Explore my work and experience in copywriting, SEO, and more.</p>
         </section>
+        <section id="searchResults"></section>
     </main>
     <footer>
-        <p>&copy; 2024 John Doe</p>
+        <p id="footerText">&copy; 2024 John Doe</p>
     </footer>
 </body>
 </html>
