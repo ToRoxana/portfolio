@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
             navContact: "Contact",
             welcomeTitle: "Welcome to My Portfolio",
             welcomeText: "Explore my work and experience in copywriting, SEO, and more.",
+            aboutTitle: "About Me",
+            aboutContent: "I'm John Doe, a professional copywriter with a passion for crafting compelling content.",
+            portfolioTitle: "My Projects",
+            contactTitle: "Contact Me",
+            contactContent: "You can reach me via email at john.doe@example.com or call me at (123) 456-7890.",
             footerText: "&copy; 2024 John Doe",
             readAloudText: "Read Aloud"
         },
@@ -26,6 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
             navContact: "Contatti",
             welcomeTitle: "Benvenuto nel Mio Portfolio",
             welcomeText: "Esplora il mio lavoro e la mia esperienza nella copywriting, SEO e altro ancora.",
+            aboutTitle: "Chi Sono",
+            aboutContent: "Sono John Doe, un copywriter professionista con una passione per creare contenuti avvincenti.",
+            portfolioTitle: "I Miei Progetti",
+            contactTitle: "Contattami",
+            contactContent: "Puoi contattarmi via email a john.doe@example.com o chiamarmi al (123) 456-7890.",
             footerText: "&copy; 2024 John Doe",
             readAloudText: "Leggi ad alta voce"
         },
@@ -38,6 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
             navContact: "Contact",
             welcomeTitle: "Bienvenue dans Mon Portfolio",
             welcomeText: "Découvrez mon travail et mon expérience en rédaction, SEO et plus encore.",
+            aboutTitle: "À Propos",
+            aboutContent: "Je suis John Doe, un rédacteur professionnel passionné par la création de contenus captivants.",
+            portfolioTitle: "Mes Projets",
+            contactTitle: "Contactez-moi",
+            contactContent: "Vous pouvez me joindre par email à john.doe@example.com ou m'appeler au (123) 456-7890.",
             footerText: "&copy; 2024 John Doe",
             readAloudText: "Lire à haute voix"
         }
@@ -49,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     readAloudButton.addEventListener('click', () => {
         if (!isSpeaking) {
             const selectedLanguage = languageSelector.value;
-            const contentToRead = document.getElementById('welcomeText').innerText;
+            const contentToRead = document.querySelector('main').innerText;
             speech = new SpeechSynthesisUtterance(contentToRead);
             window.speechSynthesis.speak(speech);
             isSpeaking = true;
@@ -71,6 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('navContact').innerText = textElements[selectedLanguage].navContact;
         document.getElementById('welcomeTitle').innerText = textElements[selectedLanguage].welcomeTitle;
         document.getElementById('welcomeText').innerText = textElements[selectedLanguage].welcomeText;
+        document.getElementById('aboutTitle').innerText = textElements[selectedLanguage].aboutTitle;
+        document.getElementById('aboutContent').innerText = textElements[selectedLanguage].aboutContent;
+        document.getElementById('portfolioTitle').innerText = textElements[selectedLanguage].portfolioTitle;
+        document.getElementById('contactTitle').innerText = textElements[selectedLanguage].contactTitle;
+        document.getElementById('contactContent').innerText = textElements[selectedLanguage].contactContent;
         document.getElementById('footerText').innerHTML = textElements[selectedLanguage].footerText;
         readAloudButton.textContent = textElements[selectedLanguage].readAloudText;
     });
