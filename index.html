@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Copywriter Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <select id="languageSelector">
+        <option value="en">English</option>
+        <option value="it">Italiano</option> <!-- Changed from Spanish to Italian -->
+        <option value="fr">Français</option>
+    </select>
 </head>
 <body>
     <header>
-        <h1>Contact Me</h1>
+        <h1>John Doe - Copywriter Portfolio</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -17,18 +23,24 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+        <select id="languageSelector">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+        </select>
+        <input type="text" id="searchBar" placeholder="Search...">
+        <button id="readAloud">Read Aloud</button>
     </header>
     <main>
         <section>
-            <h2>Get in Touch</h2>
-            <p>If you'd like to discuss a project or just want to say hello, feel free to contact me.</p>
-            <p>Email: john.doe@example.com</p>
-            <p>Phone: +1-800-555-5555</p>
-            <p>Address: 123 Your Street, Your City, Your Country</p>
+            <h2 id="content">Welcome to My Portfolio</h2>
+            <p id="multilingualContent">Explore my work and experience in copywriting, content creation, and more.</p>
         </section>
+        <section id="searchResults"></section>
     </main>
     <footer>
         <p>&copy; 2024 John Doe</p>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
