@@ -93,11 +93,22 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('contactContent').innerText = textElements[selectedLanguage].contactContent;
         document.getElementById('footerText').innerHTML = textElements[selectedLanguage].footerText;
         readAloudButton.textContent = textElements[selectedLanguage].readAloudText;
+
+        // Store the selected language in local storage to maintain consistency across pages
+        localStorage.setItem('selectedLanguage', selectedLanguage);
     });
 
     searchBar.addEventListener('input', (event) => {
         const query = event.target.value.toLowerCase();
         searchResults.innerHTML = '';
+
+        const contentItems = [
+            { title: "Project 1", content: "Summary of project 1" },
+            { title: "Project 2", content: "Summary of project 2" },
+            { title: "Project 3", content: "Summary of project 3" },
+            { title: "Project 4", content: "Summary of project 4" },
+            { title: "Project 5", content: "Summary of project 5" }
+        ];
 
         const filteredItems = contentItems.filter(item => item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query));
         filteredItems.forEach(item => {
@@ -106,4 +117,12 @@ document.addEventListener('DOMContentLoaded', () => {
             searchResults.appendChild(resultItem);
         });
     });
+
+    // Apply the stored language preference on page load
+    const storedLanguage = localStorage.getItem('selectedLanguage');
+    if (storedLanguage) {
+        languageSelector.value = storedLanguage;
+        const event = new Event('change');
+        languageSelector.dispatchEvent(event);
+    }
 });
