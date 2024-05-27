@@ -2,40 +2,201 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title id="pageTitle">Copywriter Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern and responsive personal webpage.">
+    <title>Personal Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .post {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .post img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .post h2 {
+            margin-top: 0;
+        }
+        .post .meta {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .post .meta a {
+            color: #666;
+            text-decoration: none;
+        }
+        .post .meta a:hover {
+            text-decoration: underline;
+        }
+        .comment-section {
+            margin-top: 20px;
+        }
+        .comment-section h3 {
+            margin-bottom: 10px;
+        }
+        .comment-section form {
+            display: flex;
+            flex-direction: column;
+        }
+        .comment-section textarea {
+            resize: vertical;
+            min-height: 100px;
+            margin-bottom: 10px;
+        }
+        .comment-section button {
+            align-self: flex-end;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .comment-section button:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        footer .social-icons a {
+            color: #fff;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+        @media (min-width: 768px) {
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .post {
+                flex: 1 1 calc(33.333% - 20px);
+                box-sizing: border-box;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1 id="headerTitle">John Doe - Copywriter Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html" id="navHome">Home</a></li>
-                <li><a href="about.html" id="navAbout">About</a></li>
-                <li><a href="portfolio.html" id="navPortfolio">Portfolio</a></li>
-                <li><a href="contact.html" id="navContact">Contact</a></li>
-            </ul>
-        </nav>
-        <div>
-            <select id="languageSelector">
-                <option value="en">English</option>
-                <option value="it">Italiano</option>
-                <option value="fr">Français</option>
-            </select>
-            <input type="text" id="searchBar" placeholder="Search...">
-            <button id="readAloud">Read Aloud</button>
-        </div>
+        <h1 id="welcome">Welcome to My Personal Webpage</h1>
     </header>
-    <main>
-        <section>
-            <h2 id="welcomeTitle">Welcome to My Portfolio</h2>
-            <p id="welcomeText">Explore my work and experience in copywriting, SEO, and more.</p>
-        </section>
-        <section id="searchResults"></section>
-    </main>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#blog">Blog</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#search">Search</a>
+        <select id="language-switcher">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="it">Italiano</option>
+        </select>
+        <button id="mute-btn">Mute</button>
+    </nav>
+    <div class="container">
+        <div class="post">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiNlMmU0ZWIiIC8+CiAgPHRleHQgeD0iNDAwIiB5PSIyMDAiIGR5PSIuMzVlbSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNnB4IiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBsYWNlaG9sZGVyIElNQUdFPC90ZXh0Pgo8L3N2Zz4=" alt="Post Image">
+            <h2>Post Title</h2>
+            <div class="meta">
+                <span>By <a href="#">Author</a></span> | 
+                <span>Date: 2023-05-17</span> | 
+                <span><a href="#">Comments</a></span>
+            </div>
+            <p id="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <button class="read-aloud-btn">Read Aloud</button>
+            <div class="comment-section">
+                <h3>Comments</h3>
+                <form>
+                    <textarea placeholder="Leave a comment..."></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Repeat .post div for more posts -->
+    </div>
     <footer>
-        <p id="footerText">&copy; 2024 John Doe</p>
+        <p>&copy; 2024 My Personal Webpage</p>
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
-</body>
-</html>
+    <script>
+        // Language switcher functionality
+        const translations = {
+            en: {
+                welcome: "Welcome to My Personal Webpage",
+                postTitle: "Post Title",
+                postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                comments: "Comments",
+                leaveComment: "Leave a comment...",
+                submit: "Submit"
+            },
+            fr: {
+                welcome: "Bienvenue sur ma page personnelle",
+                postTitle: "Titre de l'article",
+                postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                comments: "Commentaires",
+                leaveComment: "Laisser un commentaire...",
+                submit: "Soumettre"
+            },
+            it: {
+                welcome: "Benvenuto nella mia pagina personale",
+                postTitle: "Titolo dell'articolo",
+                postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                comments: "Commenti",
+                leaveComment: "Lascia un commento...",
+                submit: "Invia"
+            }
+        };
+
+        const languageSwitcher = document.getElementById
