@@ -2,39 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copywriter Portfolio</title>
+    <title id="pageTitle">Copywriter Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>John Doe - Copywriter Portfolio</h1>
+        <h1 id="headerTitle">John Doe - Copywriter Portfolio</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" id="navHome">Home</a></li>
+                <li><a href="about.html" id="navAbout">About</a></li>
+                <li><a href="portfolio.html" id="navPortfolio">Portfolio</a></li>
+                <li><a href="contact.html" id="navContact">Contact</a></li>
             </ul>
         </nav>
-        <select id="languageSelector">
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-        </select>
-        <input type="text" id="searchBar" placeholder="Search...">
-        <button id="readAloud">Read Aloud</button>
+        <div>
+            <select id="languageSelector">
+                <option value="en">English</option>
+                <option value="it">Italiano</option>
+                <option value="fr">Français</option>
+            </select>
+            <input type="text" id="searchBar" placeholder="Search...">
+            <button id="readAloud">Read Aloud</button>
+        </div>
     </header>
     <main>
         <section>
-            <h2 id="content">Welcome to My Portfolio</h2>
-            <p id="multilingualContent">Explore my work and experience in copywriting, SEO, and more.</p>
+            <h2 id="welcomeTitle">Welcome to My Portfolio</h2>
+            <p id="welcomeText">Explore my work and experience in copywriting, SEO, and more.</p>
         </section>
         <section id="searchResults"></section>
     </main>
     <footer>
-        <p>&copy; 2024 John Doe</p>
+        <p id="footerText">&copy; 2024 John Doe</p>
     </footer>
-    <script src="scripts.js"></script>
 </body>
 </html>
