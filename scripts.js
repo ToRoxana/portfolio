@@ -21,43 +21,42 @@ document.addEventListener('DOMContentLoaded', () => {
     // Multilingual Support
     const languages = {
         en: {
-            content: "This is the content that will change based on the selected language."
+            content: "Explore my work and experience in copywriting, SEO, and more."
         },
         es: {
-            content: "Este es el contenido que cambiará según el idioma seleccionado."
+            content: "Explora mi trabajo y experiencia en redacción, SEO y más."
         },
         fr: {
-            content: "Voici le contenu qui changera en fonction de la langue sélectionnée."
+            content: "Découvrez mon travail et mon expérience en rédaction, SEO et plus encore."
         }
     };
 
     const languageSelector = document.getElementById('languageSelector');
-    const multilingualContent = document.getElementById('multilingualContent');
-
     languageSelector.addEventListener('change', (event) => {
         const selectedLanguage = event.target.value;
-        multilingualContent.innerText = languages[selectedLanguage].content;
+        const contentElement = document.getElementById('multilingualContent');
+        contentElement.innerText = languages[selectedLanguage].content;
     });
 
-    // Search Functionality
+    // Search Feature
     const contentItems = [
-        { title: 'Home', content: 'Welcome to our homepage.' },
-        { title: 'About', content: 'Learn more about our company.' },
-        { title: 'Services', content: 'Discover our range of services.' },
-        { title: 'Contact', content: 'Get in touch with us.' }
+        { title: 'Welcome to My Portfolio', content: 'Explore my work and experience in copywriting, SEO, and more.' },
+        { title: 'My Story', content: 'I\'m John Doe, a professional copywriter with a passion for crafting compelling content.' },
+        { title: 'Published Articles', content: 'Here are some of my articles published on various websites.' },
+        { title: 'Blog', content: 'Though my blog is no longer updated, you can still read my past posts.' },
+        { title: 'Ghostwriting', content: 'I\'ve also ghostwritten numerous articles.' },
+        { title: 'SEO Projects', content: 'My work in SEO includes the following projects.' },
+        { title: 'Video Advice', content: 'I provided specific advice in a video for a company.' },
+        { title: 'Get in Touch', content: 'If you\'d like to discuss a project or just want to say hello, feel free to contact me.' }
     ];
 
     const searchBar = document.getElementById('searchBar');
-    const searchResults = document.getElementById('searchResults');
-
-    searchBar.addEventListener('keyup', (event) => {
+    searchBar.addEventListener('input', (event) => {
         const query = event.target.value.toLowerCase();
+        const searchResults = document.getElementById('searchResults');
         searchResults.innerHTML = '';
 
-        const filteredItems = contentItems.filter(item =>
-            item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query)
-        );
-
+        const filteredItems = contentItems.filter(item => item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query));
         filteredItems.forEach(item => {
             const resultItem = document.createElement('div');
             resultItem.innerHTML = `<h3>${item.title}</h3><p>${item.content}</p>`;
