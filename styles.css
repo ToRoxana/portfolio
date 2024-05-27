@@ -7,8 +7,6 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
 }
 
 header {
@@ -21,32 +19,16 @@ header {
 nav ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
 nav ul li {
+    display: inline;
     margin: 0 0.5rem;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-}
-
-nav ul li a:hover {
-    background: #555;
-    border-radius: 4px;
-}
-
-#languageSelector,
-#searchBar,
-#readAloud {
-    margin: 0.5rem;
-    padding: 0.5rem;
-    font-size: 1rem;
 }
 
 main {
@@ -61,11 +43,45 @@ h2 {
     margin-bottom: 1rem;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 0.75rem;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+form button:hover {
+    background: #555;
+}
+
 footer {
     background: #333;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
 #searchBar {
@@ -152,62 +168,4 @@ footer {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 0.5rem 0;
-    }
-
-    main {
-        padding: 1rem;
-    }
-
-    .modal-content {
-        width: 90%;
-    }
-
-    footer {
-        padding: 0.5rem 0;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 0.5rem 0;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 0.5rem 0;
-    }
-
-    #languageSelector,
-    #searchBar,
-    #readAloud {
-        width: calc(100% - 2rem);
-        margin: 0.5rem 1rem;
-        padding: 0.5rem;
-        font-size: 1rem;
-    }
-
-    main {
-        padding: 1rem;
-    }
-
-    .modal-content {
-        width: 95%;
-    }
-
-    footer {
-        padding: 0.5rem 0;
-    }
 }
