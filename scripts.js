@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchBar = document.getElementById('searchBar');
     const searchResults = document.getElementById('searchResults');
 
+    if (!readAloudButton || !languageSelector || !searchBar || !searchResults) {
+        console.error('One or more elements are missing from the DOM.');
+        return;
+        
     const contentItems = [
         { title: 'Welcome to My Portfolio', content: 'Explore my work and experience in copywriting, SEO, and more.' },
         { title: 'My Story', content: 'I\'m John Doe, a professional copywriter with a passion for crafting compelling content.' },
@@ -55,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isSpeaking) {
             const selectedLanguage = languageSelector.value;
             const contentToRead = languages[selectedLanguage].content;
-            speech = new SpeechSynthesisUtterance(contentToRead);
+            speech = new SpeechSynthesisUtterance(DOMPurify.sanitize(contentToRead));
             window.speechSynthesis.speak(speech);
             isSpeaking = true;
             readAloudButton.textContent = 'Mute';
@@ -68,19 +72,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     languageSelector.addEventListener('change', (event) => {
         const selectedLanguage = event.target.value;
-        document.getElementById('content').innerText = languages[selectedLanguage].content;
-        document.getElementById('multilingualContent').innerText = languages[selectedLanguage].content;
+        document.getElementById('content').innerText = DOMPurify.sanitize(languages[selectedLanguage].content);
+        document.getElementById('multilingualContent').innerText = DOMPurify.sanitize(languages[selectedLanguage].content);
         // Add more elements that need to change based on language
     });
 
     searchBar.addEventListener('input', (event) => {
-        const query = event.target.value.toLowerCase();
-        searchResults.innerHTML = '';
+        const query = DOMPurify.sanitize(event.target.value.toLowerCase());
+        searchResults.element.textContent = userInput;
 
         const filteredItems = contentItems.filter(item => item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query));
         filteredItems.forEach(item => {
             const resultItem = document.createElement('div');
-            resultItem.innerHTML = `<h3>${item.title}</h3><p>${item.content}</p>`;
+            resultItem.querySelector('h3').textContent = item.title;
+            resultItem.querySelector('p').textContent = item.content;
             searchResults.appendChild(resultItem);
         });
     });
